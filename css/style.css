@@ -1,0 +1,103 @@
+:root {
+  --bg: #f7f4ef;
+  --ink: #1c1a17;
+  --muted: #5c564c;
+  --card: #ffffff;
+  --accent: #2f6b4f;
+  --accent-soft: #e4efe8;
+  --line: #e4ddd2;
+  --max: 720px;
+  --wide: 960px;
+  --font: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--bg);
+  font-family: var(--font);
+  line-height: 1.65;
+  font-size: 1.05rem;
+}
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: #1f4a36; }
+.wrap { width: min(100% - 2rem, var(--wide)); margin-inline: auto; }
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: rgba(247, 244, 239, 0.92);
+  backdrop-filter: blur(8px);
+  position: sticky; top: 0; z-index: 10;
+}
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; padding: 0.9rem 0; flex-wrap: wrap;
+}
+.logo {
+  font-family: var(--sans); font-weight: 700; letter-spacing: -0.02em;
+  color: var(--ink); text-decoration: none; font-size: 1.1rem;
+}
+.logo span { color: var(--accent); }
+.nav-links { display: flex; gap: 1rem; flex-wrap: wrap; font-family: var(--sans); font-size: 0.92rem; }
+.nav-links a { color: var(--muted); text-decoration: none; }
+.nav-links a:hover { color: var(--accent); }
+.hero {
+  padding: 3rem 0 2rem;
+}
+.hero h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.15; margin: 0 0 0.8rem; letter-spacing: -0.02em;
+}
+.lead { color: var(--muted); font-size: 1.15rem; max-width: 40rem; }
+.badge {
+  display: inline-block; font-family: var(--sans); font-size: 0.75rem;
+  background: var(--accent-soft); color: var(--accent); padding: 0.25rem 0.6rem;
+  border-radius: 999px; margin-bottom: 0.8rem; font-weight: 600;
+}
+.grid {
+  display: grid; gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  padding-bottom: 2.5rem;
+}
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  padding: 1.25rem 1.3rem; transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(28,26,23,0.06); }
+.card h2 { font-size: 1.2rem; margin: 0 0 0.5rem; line-height: 1.3; }
+.card h2 a { color: inherit; text-decoration: none; }
+.card h2 a:hover { color: var(--accent); }
+.card p { margin: 0; color: var(--muted); font-size: 0.98rem; }
+.meta {
+  font-family: var(--sans); font-size: 0.8rem; color: var(--muted); margin-bottom: 0.6rem;
+}
+.article { width: min(100% - 2rem, var(--max)); margin: 0 auto; padding: 2rem 0 3.5rem; }
+.article h1 { font-size: clamp(1.7rem, 3.5vw, 2.3rem); line-height: 1.2; margin: 0.3rem 0 0.8rem; }
+.article h2 { margin-top: 2rem; font-size: 1.35rem; }
+.article h3 { margin-top: 1.4rem; font-size: 1.1rem; }
+.article p, .article li { color: #2a2621; }
+.article ul, .article ol { padding-left: 1.2rem; }
+.article li { margin: 0.35rem 0; }
+.toc {
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  padding: 1rem 1.2rem; margin: 1.4rem 0 1.8rem; font-family: var(--sans); font-size: 0.92rem;
+}
+.toc strong { display: block; margin-bottom: 0.4rem; }
+.toc a { display: block; margin: 0.25rem 0; text-decoration: none; }
+.callout {
+  background: var(--accent-soft); border-left: 4px solid var(--accent);
+  padding: 0.9rem 1rem; border-radius: 0 10px 10px 0; margin: 1.4rem 0;
+}
+.related {
+  margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line);
+}
+.related ul { padding-left: 1.1rem; }
+.site-footer {
+  border-top: 1px solid var(--line); padding: 1.6rem 0 2.2rem;
+  font-family: var(--sans); font-size: 0.88rem; color: var(--muted);
+}
+.site-footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.site-footer a { color: var(--muted); }
+.prose-page { width: min(100% - 2rem, var(--max)); margin: 0 auto; padding: 2rem 0 3rem; }
+.prose-page h1 { margin-top: 0; }
